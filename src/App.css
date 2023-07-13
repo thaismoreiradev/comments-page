@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
  align-items: center;
+background-color: rgb(29, 25, 31);
  color:beige;
 }
 
@@ -20,20 +21,34 @@
   padding: 1rem;
   gap: 0.7rem;
   max-width: 400px;
-  margin: auto;
-  margin-top: 2rem;
-  
+  margin: auto;  
+  position: relative; 
+}
+
+header{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  top: 0;
+  padding: 0.3rem;
+  padding-top: 1.3rem;
+  width: 90%;
+  background-color: rgb(29, 25, 31);      
+        
 }
 
 h1 {
   font-size: 2rem;
   line-height: 1.6rem;
+  padding: 0 2rem;
 }
 
 .form {
   background-color: blueviolet;
-  width: 100%;
+  width: 99%;
   max-width: 350px;
+  margin: auto;
  
 }
 
@@ -43,6 +58,7 @@ textarea{
   border-radius: 0.3rem;
   color: rgb(29, 25, 31);
   background-color: beige;
+  margin-bottom: 0.4rem;
 }
 
 button{
@@ -53,12 +69,13 @@ button{
   color: rgb(29, 25, 31);
   background-color: beige;
   margin-bottom: 0.5rem;
+  cursor: pointer;
   
 }
 
 
 p{
-  font-size: xx-small;
+  font-size: x-small;
   color: rgb(216, 100, 100);
 }
 
@@ -68,16 +85,24 @@ ul{
   flex-direction: column;
   background-color: blueviolet;
   max-width: 350px;
+  scroll-behavior: smooth;
+  margin-top: 12.7rem;
+  
 }
 
+
+
+
+
 li{
+  display: flex;
+  justify-content: center;
   background-color: rgb(49, 42, 53);
   list-style: none;
   padding: 0.3rem;
   width: 90%;
   border-radius: 0.3rem;
-  margin-bottom: 0.2rem;
-  word-wrap: break-word;
-  min-height: 2rem;
-  
+  margin-bottom: 0.2rem;  
+  word-break: break-all;
+  min-height: 2rem;  
 }

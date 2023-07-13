@@ -28,17 +28,19 @@ function App() {
 
   return (
     <div className="container">
-      <TbMessageHeart className="icon" />
-      <h1>Send your feedback</h1>
-      <div className="form">
-        <textarea
-          onChange={(e) => setCurrentComment(e.target.value)}
-          value={currentComment}
-          placeholder="Enter your opinion here ..."
-        ></textarea>
-        <button onClick={handleButton}>SEND</button>
-        <p>{errorMessage}</p>
-      </div>
+      <header>
+        <TbMessageHeart className="icon" />
+        <h1>Send your feedback</h1>
+        <div className="form">
+          <textarea
+            onChange={(e) => setCurrentComment(e.target.value)}
+            value={currentComment}
+            placeholder="Enter your opinion here ..."
+          ></textarea>
+          <button onClick={handleButton}>SEND</button>
+          <p>{errorMessage}</p>
+        </div>
+      </header>
 
       <ul>
         {allComments.map((comment, index) => (
