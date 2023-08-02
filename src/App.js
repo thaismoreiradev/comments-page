@@ -5,24 +5,19 @@ import { TbMessageHeart } from "react-icons/tb";
 function App() {
   const [currentComment, setCurrentComment] = React.useState("");
   const [allComments, setAllComments] = React.useState([]);
-  const [errorMessage, setErrorMessage] = React.useState("");
-
-  // const getValue = (data) => {
-  //   setCurrentComment(data.target.value)
-
-  // }
+  const [message, setMessage] = React.useState("");
+  const [feedbackStatus, setFeedbackStatus] = React.useState();
 
   const handleButton = () => {
     if (currentComment.length === 0) {
-      setErrorMessage("You need to write something first");
+      setMessage("You need to write something first");
+      setFeedbackStatus(false);
     } else {
-      const commentsArray = [...allComments, currentComment];
-
+      const commentsArray = [...allComments, `"${currentComment}"`];
+      setFeedbackStatus(true);
+      setMessage("We have received your message, thank you!");
       setAllComments(commentsArray);
-
       setCurrentComment("");
-
-      setErrorMessage();
     }
   };
 
@@ -35,10 +30,18 @@ function App() {
           <textarea
             onChange={(e) => setCurrentComment(e.target.value)}
             value={currentComment}
-            placeholder="Enter your opinion here ..."
+            placeholder="Please enter your opinion here ..."
           ></textarea>
-          <button onClick={handleButton}>SEND</button>
-          <p>{errorMessage}</p>
+          <button onClick={handleButton}>send</button>
+          <p
+            style={
+              feedbackStatus === false
+                ? { color: "tomato" }
+                : { color: "olivedrab" }
+            }
+          >
+            {message}
+          </p>
         </div>
       </header>
 
